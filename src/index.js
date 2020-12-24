@@ -4,6 +4,9 @@ const morgan = require('morgan')
 const path = require('path')
 const app = express()
 
+// Setings
+app.set("port", process.env.PORT || 3000)
+
 // Midelware
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended: false}))
@@ -15,5 +18,5 @@ app.use(require('./routes/index'))
 // Static Content
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.listen(3000)
-console.log('Servidor en el puerto 3000')
+app.listen(app.get("port"))
+console.log(`Servidor en el puerto ${app.get("port")}`)
