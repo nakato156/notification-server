@@ -1,7 +1,7 @@
  require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
-const cors = require('cors');
+const cors = require('cors'); //añadido modulo cors
 const app = express()
 
 // Setings
